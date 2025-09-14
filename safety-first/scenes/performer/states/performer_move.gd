@@ -11,6 +11,9 @@ func physics_update(delta):
 	if direction == 0:
 		state_machine.change_state("performeridle")
 	
+	if not character.is_on_floor():
+		state_machine.change_state("performerfall")
+	
 	character.velocity.x = direction * move_speed
 	character.move_and_slide()
 

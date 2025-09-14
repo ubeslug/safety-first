@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpsugdia73ght"]
+[gd_scene load_steps=8 format=3 uid="uid://cpsugdia73ght"]
 
 [ext_resource type="Script" uid="uid://dotxrqkqh5f37" path="res://scenes/performer/states/performer_idle.gd" id="1_4bs5t"]
 [ext_resource type="Script" uid="uid://ba7p7fejmv88i" path="res://scripts/state_machine.gd" id="1_e563t"]
+[ext_resource type="Script" uid="uid://ed0uhk53whvp" path="res://scripts/performer.gd" id="1_kyfkw"]
 [ext_resource type="Script" uid="uid://v8gufcgh1q7l" path="res://scenes/performer/states/performer_move.gd" id="2_e563t"]
+[ext_resource type="Script" uid="uid://rfigvb0yxlp4" path="res://scenes/performer/states/performer_fall.gd" id="4_epx6r"]
 [ext_resource type="Texture2D" uid="uid://dvjvlqo82gc55" path="res://assets/icon.svg" id="4_g66bp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g66bp"]
@@ -10,6 +12,7 @@ radius = 60.0
 height = 126.0
 
 [node name="Performer" type="CharacterBody2D"]
+script = ExtResource("1_kyfkw")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_e563t")
@@ -22,7 +25,12 @@ metadata/_custom_type_script = "uid://dotxrqkqh5f37"
 
 [node name="PerformerMove" type="Node" parent="StateMachine"]
 script = ExtResource("2_e563t")
+move_speed = 400.0
 metadata/_custom_type_script = "uid://v8gufcgh1q7l"
+
+[node name="PerformerFall" type="Node" parent="StateMachine"]
+script = ExtResource("4_epx6r")
+metadata/_custom_type_script = "uid://rfigvb0yxlp4"
 
 [node name="Visuals" type="Node2D" parent="."]
 
