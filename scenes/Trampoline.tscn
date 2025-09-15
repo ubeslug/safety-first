@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dvjvlqo82gc55" path="res://assets/icon.svg" id="1_x4jd5"]
 
 [node name="Trampoline" type="Node2D"]
-scale = Vector2(1, 0.2)
+rotation = -1.5708
+scale = Vector2(1, 0.1)
 script = ExtResource("1_tjmnf")
 
 [node name="Icon" type="Sprite2D" parent="."]

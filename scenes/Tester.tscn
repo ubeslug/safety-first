@@ -14,3 +14,17 @@ offset_right = 637.0
 offset_bottom = 186.0
 theme_override_font_sizes/font_size = 50
 text = "TEST SCENE"
+
+[node name="point1" type="Node2D" parent="."]
+rotation = -1.5708
+scale = Vector2(1, 0.2)
+
+[node name="point2" type="Node2D" parent="."]
+position = Vector2(200, 0)
+rotation = -1.5708
+scale = Vector2(1, 0.2)
+
+[node name="Trampoline" parent="." instance=ExtResource("2_mfh4t")]
+position = Vector2(100, 0)
+rotation = 0.0
+scale = Vector2(1.6, 0.2)

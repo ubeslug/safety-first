@@ -5,7 +5,7 @@ extends Node2D
 var pos1 = null
 
 var trampCount = 0
-@export var maxTramps = 3
+@export var maxTramps = 6
 
 # save position 1
 # when position 2 is created, clear position 1 and create line between
@@ -19,7 +19,7 @@ func AddPoint(pos):
 		print("L Click")
 		if(pos1):
 			var tramp = trampoline.instantiate()
-			tramp.global_position = pos
+			tramp.global_position = Vector2((pos1.x + pos.x) / 2, (pos1.y + pos.y) / 2)
 			tramp.SetLine(pos1, pos)
 			add_child(tramp)
 			pos1 = null
