@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn0gfwwcwuf80"]
+
+[ext_resource type="Script" uid="uid://lvr3wh0ty7gh" path="res://scripts/Stage Hand/TrampolineCreator.gd" id="1_1ah7l"]
+[ext_resource type="PackedScene" uid="uid://bl7ofcw4k3hce" path="res://scenes/Trampoline.tscn" id="2_mfh4t"]
+
+[node name="Tester" type="Node2D"]
+script = ExtResource("1_1ah7l")
+trampoline = ExtResource("2_mfh4t")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 358.0
+offset_top = 117.0
+offset_right = 637.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 50
+text = "TEST SCENE"
