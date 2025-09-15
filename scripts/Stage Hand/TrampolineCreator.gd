@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var trampoline: Resource
+@export var point: Resource
+var pointRef: Node2D
 
 var pos1 = null
 
@@ -16,7 +18,6 @@ func _input(event):
 
 func AddPoint(pos):
 	if(trampCount < maxTramps):
-		print("L Click")
 		if(pos1):
 			var tramp = trampoline.instantiate()
 			tramp.global_position = Vector2((pos1.x + pos.x) / 2, (pos1.y + pos.y) / 2)
@@ -24,5 +25,13 @@ func AddPoint(pos):
 			add_child(tramp)
 			pos1 = null
 			trampCount += 1
+			
+			# delete "point"
+			pointRef.queue_free()
 		else:
 			pos1 = pos
+			# spawn "point"
+			var point = point.instantiate()
+			point.global_position = pos
+			add_child(point)
+			pointRef = point
