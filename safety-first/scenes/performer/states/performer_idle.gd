@@ -16,7 +16,6 @@ func update(delta):
 		state_machine.change_state("performerfall")
 
 func handle_input(event: InputEvent):
-	#if Input.is_action_pressed("performer_left") or Input.is_action_just_pressed("performer_right"):
-	#	state_machine.change_state("performermove")
+	if Input.is_action_pressed("performer_jump"):
+		state_machine.change_state("performerjump")
 	
-	pass
