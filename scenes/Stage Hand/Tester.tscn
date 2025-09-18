@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn0gfwwcwuf80"]
+[gd_scene load_steps=5 format=3 uid="uid://cn0gfwwcwuf80"]
 
 [ext_resource type="Script" uid="uid://lvr3wh0ty7gh" path="res://scripts/Stage Hand/TrampolineCreator.gd" id="1_1ah7l"]
 [ext_resource type="PackedScene" uid="uid://bl7ofcw4k3hce" path="res://scenes/Stage Hand/Trampoline.tscn" id="2_mfh4t"]
 [ext_resource type="PackedScene" uid="uid://o2ou3mpfwyiu" path="res://scenes/Stage Hand/Point.tscn" id="3_v2wrt"]
+[ext_resource type="PackedScene" uid="uid://dsr0154j8s6hc" path="res://scenes/Stage Hand/dummy.tscn" id="4_2873m"]
 
 [node name="Tester" type="Node2D"]
 script = ExtResource("1_1ah7l")
 trampoline = ExtResource("2_mfh4t")
 point = ExtResource("3_v2wrt")
+dummy = ExtResource("4_2873m")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 358.0
@@ -16,12 +18,3 @@ offset_right = 637.0
 offset_bottom = 186.0
 theme_override_font_sizes/font_size = 50
 text = "TEST SCENE"
-
-[node name="point1" type="Node2D" parent="."]
-rotation = -1.5708
-scale = Vector2(1, 0.2)
-
-[node name="point2" type="Node2D" parent="."]
-position = Vector2(200, 0)
-rotation = -1.5708
-scale = Vector2(1, 0.2)

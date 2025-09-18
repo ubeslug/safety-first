@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bmhosceqofppk" path="res://scripts/Stage Hand/trampoline.gd" id="1_tjmnf"]
 [ext_resource type="Texture2D" uid="uid://dvjvlqo82gc55" path="res://icon.svg" id="1_x4jd5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjmnf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4pvx"]
+size = Vector2(129, 128)
 
 [node name="Trampoline" type="Node2D"]
 rotation = -1.5708
@@ -13,12 +14,14 @@ script = ExtResource("1_tjmnf")
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_x4jd5")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_tjmnf")
-
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Area2D" type="Area2D" parent="."]
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.40179e-11, 2.09808e-05)
+shape = SubResource("RectangleShape2D_p4pvx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
