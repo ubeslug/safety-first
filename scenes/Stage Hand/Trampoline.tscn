@@ -7,7 +7,6 @@
 size = Vector2(129, 128)
 
 [node name="Trampoline" type="Node2D"]
-rotation = -1.5708
 scale = Vector2(1, 0.1)
 script = ExtResource("1_tjmnf")
 

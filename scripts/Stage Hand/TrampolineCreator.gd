@@ -2,7 +2,7 @@ extends Node2D
 
 @export var trampoline: Resource
 @export var point: Resource
-@export var dummy: Resource
+@export var dummy: Resource # delete later
 var pointRef: Node2D
 
 var pos1 = null
@@ -13,8 +13,7 @@ var trampCount = 0
 func _physics_process(delta: float) -> void:
 	# if point is made and cursor is too far, destroy point
 		if(pos1):
-			print(pos1.distance_to(get_global_mouse_position()))
-			if(pos1.distance_to(get_global_mouse_position()) > 600):
+			if(pos1.distance_to(get_global_mouse_position()) > 650):
 				pos1 = null
 				pointRef.queue_free()
 
