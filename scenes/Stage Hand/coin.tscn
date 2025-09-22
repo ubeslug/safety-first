@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1lhfjupp4y3i"]
+
+[ext_resource type="Texture2D" uid="uid://dvjvlqo82gc55" path="res://assets/icon.svg" id="1_mgapg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uhtj"]
+size = Vector2(58, 76)
+
+[node name="Coin" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.687954, 0.687954, 0, 1)
+scale = Vector2(0.45, 0.6)
+texture = ExtResource("1_mgapg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0uhtj")

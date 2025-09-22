@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn0gfwwcwuf80"]
+
+[ext_resource type="Script" uid="uid://b1ecexb2fks0d" path="res://scripts/Stage Hand/GameController.gd" id="1_fxjpc"]
+[ext_resource type="PackedScene" uid="uid://bmwiwfbehbt4r" path="res://scenes/Stage Hand/trampoline_creator.tscn" id="2_fxjpc"]
+[ext_resource type="PackedScene" uid="uid://rfaugcw7u5i2" path="res://scenes/Stage Hand/Audience.tscn" id="3_v2wrt"]
+[ext_resource type="PackedScene" uid="uid://d1lhfjupp4y3i" path="res://scenes/Stage Hand/coin.tscn" id="4_2873m"]
+[ext_resource type="Texture2D" uid="uid://dvjvlqo82gc55" path="res://assets/icon.svg" id="5_m87nu"]
+
+[node name="Tester" type="Node2D"]
+script = ExtResource("1_fxjpc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="test" type="Label" parent="CanvasLayer"]
+offset_left = 398.0
+offset_top = 26.0
+offset_right = 677.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 50
+text = "TEST SCENE"
+
+[node name="TimeLeft" type="Label" parent="CanvasLayer"]
+offset_left = 527.0
+offset_top = 97.0
+offset_right = 567.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "0"
+
+[node name="TrampolineCreator" parent="." instance=ExtResource("2_fxjpc")]
+
+[node name="Audience" parent="." instance=ExtResource("3_v2wrt")]
+position = Vector2(1, 612)
+
+[node name="Coin" parent="Audience" instance=ExtResource("4_2873m")]
+position = Vector2(5, -114.015)
+
+[node name="Ground" type="Sprite2D" parent="."]
+modulate = Color(0.701791, 0.318, 0.117181, 1)
+position = Vector2(573, 580)
+scale = Vector2(9.02, 1)
+texture = ExtResource("5_m87nu")
