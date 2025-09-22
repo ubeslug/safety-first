@@ -3,7 +3,6 @@ extends State
 class_name PerformerIdle
 
 
-
 func enter():
 	pass
 	#print("Performer entering idle state")

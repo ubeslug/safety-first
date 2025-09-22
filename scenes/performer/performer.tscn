@@ -8,12 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://dvjvlqo82gc55" path="res://assets/icon.svg" id="4_g66bp"]
 [ext_resource type="Script" uid="uid://daf4h054qht6y" path="res://scenes/performer/states/performer_jump.gd" id="6_imuhs"]
 
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g66bp"]
 radius = 60.0
 height = 126.0
 
 [node name="Performer" type="CharacterBody2D"]
+
 script = ExtResource("1_kyfkw")
+
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_e563t")
@@ -23,6 +26,7 @@ metadata/_custom_type_script = "uid://ba7p7fejmv88i"
 [node name="PerformerIdle" type="Node" parent="StateMachine"]
 script = ExtResource("1_4bs5t")
 metadata/_custom_type_script = "uid://dotxrqkqh5f37"
+
 
 [node name="PerformerMove" type="Node" parent="StateMachine" node_paths=PackedStringArray("character")]
 script = ExtResource("2_e563t")
@@ -40,6 +44,7 @@ script = ExtResource("6_imuhs")
 character = NodePath("../..")
 jump_velocity = 400.0
 metadata/_custom_type_script = "uid://daf4h054qht6y"
+
 
 [node name="Visuals" type="Node2D" parent="."]
 
