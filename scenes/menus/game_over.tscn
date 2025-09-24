@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj3odl7kxv5sb"]
+
+[ext_resource type="Script" uid="uid://cls30of7walbq" path="res://scenes/menus/game_over.gd" id="1_ujjcl"]
+
+[node name="GameOver" type="Node2D" node_paths=PackedStringArray("ScoreLabel", "HighScoreLabel")]
+script = ExtResource("1_ujjcl")
+ScoreLabel = NodePath("CanvasLayer/VBoxContainer/ScoreLabel")
+HighScoreLabel = NodePath("CanvasLayer/VBoxContainer/HighScoreLabel")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -20.0
+offset_right = 43.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "High Score: "
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Score:"
+
+[node name="TryAgain" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Try Again"
+
+[node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
