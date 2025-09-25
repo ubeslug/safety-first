@@ -2,7 +2,7 @@ extends Node2D
 
 @export var AudienceMember: Texture2D
 @export var Coin: Resource
-@export var Ground: Resource
+@export var Ground: Sprite2D#Resource
 
 @onready var Group = $Group
 

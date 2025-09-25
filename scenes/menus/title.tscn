@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://cwdkuji0ariaj"]
+[gd_scene load_steps=2 format=3 uid="uid://cwdkuji0ariaj"]
+
+[ext_resource type="Script" uid="uid://lnv5d0j2eu3l" path="res://scripts/title.gd" id="1_pcubs"]
 
 [node name="Title" type="Node2D"]
+script = ExtResource("1_pcubs")
+game_scene = "uid://cn0gfwwcwuf80"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -24,3 +28,6 @@ text = "Start"
 [node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

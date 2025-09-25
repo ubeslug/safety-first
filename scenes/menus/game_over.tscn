@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj3odl7kxv5sb"]
+[gd_scene load_steps=2 format=3 uid="uid://cxhf7bbtqfb8b"]
 
-[ext_resource type="Script" uid="uid://cls30of7walbq" path="res://scenes/menus/game_over.gd" id="1_ujjcl"]
+[ext_resource type="Script" uid="uid://cls30of7walbq" path="res://game_over.gd" id="1_ujjcl"]
 
 [node name="GameOver" type="Node2D" node_paths=PackedStringArray("ScoreLabel", "HighScoreLabel")]
 script = ExtResource("1_ujjcl")
 ScoreLabel = NodePath("CanvasLayer/VBoxContainer/ScoreLabel")
 HighScoreLabel = NodePath("CanvasLayer/VBoxContainer/HighScoreLabel")
+game_scene = "uid://cn0gfwwcwuf80"
+title_scene = "uid://cwdkuji0ariaj"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -41,7 +43,7 @@ text = "Try Again"
 
 [node name="Quit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Back to Title Screen"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
