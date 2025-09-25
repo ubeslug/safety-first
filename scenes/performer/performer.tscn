@@ -52,6 +52,7 @@ texture = ExtResource("4_g66bp")
 shape = SubResource("CapsuleShape2D_g66bp")
 
 [node name="Trampoline\\Detector" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trampoline\\Detector"]
 position = Vector2(0, 56)
