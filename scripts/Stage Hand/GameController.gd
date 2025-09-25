@@ -1,9 +1,13 @@
 extends Node
 
 @onready var timeText: Label = $CanvasLayer/TimeLeft
-var timeLeft = 5
+@export var timeLeft = 60
 
 @export_file() var game_over_scene
+
+func _ready() -> void:
+	timeLeft = 60
+
 
 func _process(delta: float) -> void:
 	TimeDecrease(delta)

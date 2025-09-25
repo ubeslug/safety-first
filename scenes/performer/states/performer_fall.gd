@@ -23,5 +23,11 @@ func physics_update(delta):
 	character.move_and_slide()
 
 func handle_input(event: InputEvent):
-	if Input.is_action_pressed("performer_jump"):
-		state_machine.change_state("performerjump")
+	#if Input.is_action_pressed("performer_jump"):
+	#	state_machine.change_state("performerjump")
+	pass
+
+
+
+func _on_trampoline_detector_area_entered(area: Area2D) -> void:
+	state_machine.change_state("performerjump")

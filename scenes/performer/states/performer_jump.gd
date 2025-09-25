@@ -30,8 +30,9 @@ func physics_update(delta):
 	character.move_and_slide()
 
 func handle_input(event: InputEvent):
-	if Input.is_action_pressed("performer_jump"):
-		jump(jump_velocity)
+	#if Input.is_action_pressed("performer_jump"):
+	#	jump(jump_velocity)
+	pass
 
 func jump(jump_force: float):
 	character.velocity.y = (jump_velocity * -1)

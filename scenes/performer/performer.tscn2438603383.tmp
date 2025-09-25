@@ -57,6 +57,5 @@ shape = SubResource("CapsuleShape2D_g66bp")
 position = Vector2(0, 56)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_imuhs")
-disabled = true
 
 [connection signal="area_entered" from="Trampoline\\Detector" to="StateMachine/PerformerFall" method="_on_trampoline_detector_area_entered"]
